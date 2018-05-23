@@ -10,26 +10,19 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell, ArticleCellView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var bylineLabel: UILabel!
+	@IBOutlet weak var publishedLabel: UILabel!
 	
 	func display(title: String) {
-		
+		titleLabel.text = title
 	}
 	
 	func display(byline: String) {
-		
+		bylineLabel.text = byline
 	}
 	
 	func display(publishDateString: String) {
-		
+		publishedLabel.text = publishDateString
 	}
 }

@@ -29,6 +29,7 @@ class ArticleListPresenter {
 	
 	init(view: ArticleListView,
 		 displayArticleListInteractor: DisplayArticleListInteractor = Logic.sharedInstance.displayArticleListInteractor) {
+		self.view = view
 		self.displayArticleListInteractor = displayArticleListInteractor
 	}
 	

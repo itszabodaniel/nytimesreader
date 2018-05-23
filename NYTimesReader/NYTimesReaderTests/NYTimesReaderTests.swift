@@ -3,7 +3,7 @@
 //  NYTimesReaderTests
 //
 //  Created by Szabó Dániel on 2018. 05. 21..
-//  Copyright © 2018. Daniel Szabo. All rights reserved.
+//  Copyright © 2018. Szabó Dániel. All rights reserved.
 //
 
 import XCTest

@@ -1,14 +1,14 @@
 //
-//  DetailViewController.swift
+//  ArticleDetailViewController.swift
 //  NYTimesReader
 //
 //  Created by Szabó Dániel on 2018. 05. 21..
-//  Copyright © 2018. Daniel Szabo. All rights reserved.
+//  Copyright © 2018. Szabó Dániel. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ArticleDetailViewController: UIViewController {
 
 	@IBOutlet weak var detailDescriptionLabel: UILabel!
 

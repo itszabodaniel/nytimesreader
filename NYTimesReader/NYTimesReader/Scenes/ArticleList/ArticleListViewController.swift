@@ -3,14 +3,14 @@
 //  NYTimesReader
 //
 //  Created by Szabó Dániel on 2018. 05. 21..
-//  Copyright © 2018. Daniel Szabo. All rights reserved.
+//  Copyright © 2018. Szabó Dániel. All rights reserved.
 //
 
 import UIKit
 
 class MasterViewController: UITableViewController {
 
-	var detailViewController: DetailViewController? = nil
+	var detailViewController: ArticleDetailViewController? = nil
 	var objects = [Any]()
 
 
@@ -23,7 +23,7 @@ class MasterViewController: UITableViewController {
 		navigationItem.rightBarButtonItem = addButton
 		if let split = splitViewController {
 		    let controllers = split.viewControllers
-		    detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+		    detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ArticleDetailViewController
 		}
 	}
 
@@ -50,9 +50,8 @@ class MasterViewController: UITableViewController {
 		if segue.identifier == "showDetail" {
 		    if let indexPath = tableView.indexPathForSelectedRow {
 		        let object = objects[indexPath.row] as! NSDate
-		        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+		        let controller = (segue.destination as! UINavigationController).topViewController as! ArticleDetailViewController
 		        controller.detailItem = object
-		        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 		        controller.navigationItem.leftItemsSupplementBackButton = true
 		    }
 		}

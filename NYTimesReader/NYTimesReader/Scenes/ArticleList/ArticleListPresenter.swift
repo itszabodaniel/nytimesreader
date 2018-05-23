@@ -12,6 +12,7 @@ protocol ArticleListView: class {
 	func refreshArticlesList()
 	func showLoadingIndicator()
 	func hideLoadingIndicator()
+	func showErrorDialog(error: Error)
 	func showDetailWithURL(url: URL, title: String)
 }
 
@@ -35,14 +36,20 @@ class ArticleListPresenter {
 	}
 	
 	func viewDidLoad() {
+		self.refreshArticles()
+	}
+	
+	func refreshArticles() {
 		view?.showLoadingIndicator()
 		displayArticleListInteractor.getMostPopularArticles { (articles, error) in
 			if let articles = articles {
 				self.articles = articles
 				self.view?.refreshArticlesList()
-				self.view?.hideLoadingIndicator()
+			} else if let error = error {
+				self.view?.showErrorDialog(error: error)
 			}
 		}
+		self.view?.hideLoadingIndicator()
 	}
 	
 	func numberOfArticles() -> Int {

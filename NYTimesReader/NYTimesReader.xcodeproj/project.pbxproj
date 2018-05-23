@@ -14,6 +14,20 @@
 		9B98349D20B5F9AD00F46745 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B98349B20B5F9AD00F46745 /* MBProgressHUD.framework */; };
 		9B98349E20B5F9AD00F46745 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B98349C20B5F9AD00F46745 /* SDWebImage.framework */; };
 		9B9834A120B5FEE200F46745 /* ArticleDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9834A020B5FEE200F46745 /* ArticleDetailPresenter.swift */; };
+		9B9834A320B604C200F46745 /* DummyRestPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9834A220B604C200F46745 /* DummyRestPlugin.swift */; };
+		9B9834A420B604E500F46745 /* RestPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF4D20B38497005336A9 /* RestPluginProtocol.swift */; };
+		9B9834A520B604EA00F46745 /* DisplayArticleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF3F20B37565005336A9 /* DisplayArticleListInteractor.swift */; };
+		9B9834A620B604ED00F46745 /* ArticlesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF3C20B36439005336A9 /* ArticlesGateway.swift */; };
+		9B9834A720B604F000F46745 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF3920B361B8005336A9 /* Article.swift */; };
+		9B9834A920B607E800F46745 /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B9834A820B607E800F46745 /* testJson.json */; };
+		9B9834AA20B6097300F46745 /* ApiArticlesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF4A20B38433005336A9 /* ApiArticlesGateway.swift */; };
+		9B9834AB20B6098D00F46745 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF5220B4AA05005336A9 /* Constants.swift */; };
+		9B9834AD20B6103D00F46745 /* ArticleListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9834AC20B6103D00F46745 /* ArticleListPresenterTests.swift */; };
+		9B9834AE20B6114800F46745 /* ArticleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B71A79520B4CC880053AF97 /* ArticleListPresenter.swift */; };
+		9B9834AF20B6115600F46745 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B71A79720B5CF440053AF97 /* Logic.swift */; };
+		9B9834B020B6116100F46745 /* PluginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF4420B382AB005336A9 /* PluginFactory.swift */; };
+		9B9834B120B6116500F46745 /* GatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF4820B382E7005336A9 /* GatewayFactory.swift */; };
+		9B9834B220B6116B00F46745 /* DefaultRestPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF4C20B38497005336A9 /* DefaultRestPlugin.swift */; };
 		9BD9BF0820B36073005336A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF0720B36073005336A9 /* AppDelegate.swift */; };
 		9BD9BF0A20B36073005336A9 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF0920B36073005336A9 /* ArticleListViewController.swift */; };
 		9BD9BF0C20B36073005336A9 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF0B20B36073005336A9 /* ArticleDetailViewController.swift */; };
@@ -58,6 +72,9 @@
 		9B98349B20B5F9AD00F46745 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		9B98349C20B5F9AD00F46745 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		9B9834A020B5FEE200F46745 /* ArticleDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailPresenter.swift; sourceTree = "<group>"; };
+		9B9834A220B604C200F46745 /* DummyRestPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRestPlugin.swift; sourceTree = "<group>"; };
+		9B9834A820B607E800F46745 /* testJson.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = testJson.json; sourceTree = "<group>"; };
+		9B9834AC20B6103D00F46745 /* ArticleListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresenterTests.swift; sourceTree = "<group>"; };
 		9BD9BF0420B36073005336A9 /* NYTimesReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9BF0720B36073005336A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD9BF0920B36073005336A9 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				9BD9BF1E20B36075005336A9 /* NYTimesReaderTests.swift */,
+				9B9834AC20B6103D00F46745 /* ArticleListPresenterTests.swift */,
+				9B9834A220B604C200F46745 /* DummyRestPlugin.swift */,
+				9B9834A820B607E800F46745 /* testJson.json */,
 				9BD9BF2020B36075005336A9 /* Info.plist */,
 			);
 			path = NYTimesReaderTests;
@@ -406,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9834A920B607E800F46745 /* testJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +488,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD9BF1F20B36075005336A9 /* NYTimesReaderTests.swift in Sources */,
+				9B9834B120B6116500F46745 /* GatewayFactory.swift in Sources */,
+				9B9834AD20B6103D00F46745 /* ArticleListPresenterTests.swift in Sources */,
+				9B9834AA20B6097300F46745 /* ApiArticlesGateway.swift in Sources */,
+				9B9834B220B6116B00F46745 /* DefaultRestPlugin.swift in Sources */,
+				9B9834AF20B6115600F46745 /* Logic.swift in Sources */,
+				9B9834AE20B6114800F46745 /* ArticleListPresenter.swift in Sources */,
+				9B9834A420B604E500F46745 /* RestPluginProtocol.swift in Sources */,
+				9B9834A720B604F000F46745 /* Article.swift in Sources */,
+				9B9834A620B604ED00F46745 /* ArticlesGateway.swift in Sources */,
+				9B9834A520B604EA00F46745 /* DisplayArticleListInteractor.swift in Sources */,
+				9B9834B020B6116100F46745 /* PluginFactory.swift in Sources */,
+				9B9834A320B604C200F46745 /* DummyRestPlugin.swift in Sources */,
+				9B9834AB20B6098D00F46745 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

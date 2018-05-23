@@ -99,3 +99,33 @@ extension Article: CustomStringConvertible {
 		}
 	}
 }
+
+// MARK: Equatable
+
+extension Article: Equatable {
+	public static func == (lhs: Article, rhs: Article) -> Bool {
+		return lhs.id == rhs.id &&
+			lhs.title == rhs.title &&
+			lhs.byline == rhs.byline &&
+			lhs.publishDateString == rhs.publishDateString &&
+			lhs.url == rhs.url &&
+			lhs.media == rhs.media
+	}
+}
+
+extension Media: Equatable {
+	public static func == (lhs: Media, rhs: Media) -> Bool {
+		return 	lhs.type == rhs.type &&
+			lhs.subtype == rhs.subtype &&
+			lhs.mediaMetadata == rhs.mediaMetadata
+	}
+}
+
+extension MediaMetadata: Equatable {
+	public static func == (lhs: MediaMetadata, rhs: MediaMetadata) -> Bool {
+		return 	lhs.url == rhs.url &&
+		lhs.format == rhs.format &&
+		lhs.height == rhs.height &&
+		lhs.width == rhs.width
+	}
+}

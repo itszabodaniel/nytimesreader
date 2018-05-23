@@ -71,6 +71,14 @@ class ArticleListViewController: UITableViewController, ArticleListView {
 		MBProgressHUD.hide(for: self.view, animated: false)
 	}
 	
+	func showErrorDialog(error: Error) {
+		let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Reload", style: .default, handler: { (action) in
+			self.presenter.refreshArticles()
+		}))
+		self.present(alert, animated: true, completion: nil)
+	}
+	
 	func showDetailWithURL(url: URL, title: String) {
 		detailURL = url
 		detailTitle = title

@@ -1,0 +1,30 @@
+{
+"status":"OK",
+"copyright":"Copyright (c) 2018 The New York Times Company.  All Rights Reserved.",
+"num_results":1740,
+"results":[
+{
+"url":"https:\/\/www.nytimes.com\/interactive\/2018\/05\/16\/upshot\/audio-clip-yanny-laurel-debate.html",
+"adx_keywords":"Computers and the Internet;Social Media;Audio Recordings, Downloads and Streaming",
+"column":"",
+"section":"The Upshot",
+"byline":"By JOSH KATZ, JONATHAN CORUM and JON HUANG",
+"type":"Interactive",
+"title":"We Made a Tool So You Can Hear Both Yanny and Laurel",
+"abstract":"How far do you have to move our slider to hear one name or the other?",
+"published_date":"2018-05-16",
+"source":"The New York Times",
+"id":100000005903945,
+"asset_id":100000005903945,
+"views":1,
+"des_facet":[
+"COMPUTERS AND THE INTERNET",
+"SOCIAL MEDIA",
+"AUDIO RECORDINGS, DOWNLOADS AND STREAMING"
+],
+"org_facet":"",
+"per_facet":"",
+"geo_facet":""
+
+}
+]}

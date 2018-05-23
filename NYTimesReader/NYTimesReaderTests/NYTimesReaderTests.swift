@@ -21,16 +21,23 @@ class NYTimesReaderTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDisplayArticleListInteractor() {
+		let testBundle = Bundle(for: type(of: self))
+		let fileURL = testBundle.url(forResource: "testJson", withExtension: "json")
+		XCTAssertNotNil(fileURL)
+		let json = try! Data(contentsOf: fileURL!)
+		let dummyRestPlugin = DummyRestPlugin(data: json, error: nil)
+		let gateway = ApiArticlesGateway(restPlugin: dummyRestPlugin)
+		let interactor = DisplayArticleListInteractor(articlesGateway: gateway)
+		interactor.getMostPopularArticles { (articles, error) in
+			let article = articles!.first!
+			let testArticle = Article(id: 100000005903945,
+									  title: "We Made a Tool So You Can Hear Both Yanny and Laurel",
+									  byline: "By JOSH KATZ, JONATHAN CORUM and JON HUANG",
+									  publishDateString: "2018-05-16",
+									  url: URL(string: "https://www.nytimes.com/interactive/2018/05/16/upshot/audio-clip-yanny-laurel-debate.html")!,
+									  media: [])
+			XCTAssertEqual(article, testArticle)
+		}
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

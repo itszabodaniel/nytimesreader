@@ -7,39 +7,47 @@
 //
 
 import UIKit
+import WebKit
+import MBProgressHUD
 
-class ArticleDetailViewController: UIViewController {
-
-	@IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-	func configureView() {
-		// Update the user interface for the detail item.
-		if let detail = detailItem {
-		    if let label = detailDescriptionLabel {
-		        label.text = detail.description
-		    }
+class ArticleDetailViewController: UIViewController, ArticleDetailView {
+	
+	@IBOutlet weak var webView: WKWebView!
+	var presenter: ArticleDetailPresenter!
+	
+	var url: URL? {
+		didSet {
+			if let url = url {
+				presenter?.setDetailURL(url: url)
+			}
 		}
 	}
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
-		configureView()
-	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-	var detailItem: NSDate? {
-		didSet {
-		    // Update the view.
-		    configureView()
+		presenter = ArticleDetailPresenter(view: self)
+		if let url = url {
+			presenter.setDetailURL(url: url)
 		}
+		webView.navigationDelegate = self
 	}
-
-
+	
+	func loadURL(url: URL) {
+		webView.load(URLRequest(url: url))
+	}
+	
+	
+	func showLoadingIndicator() {
+		MBProgressHUD.showAdded(to: self.view, animated: false)
+	}
+	
+	func hideLoadingIndicator() {
+		MBProgressHUD.hide(for: self.view, animated: false)
+	}
 }
 
+extension ArticleDetailViewController: WKNavigationDelegate {
+	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+		presenter.loadingCompleted()
+	}
+}

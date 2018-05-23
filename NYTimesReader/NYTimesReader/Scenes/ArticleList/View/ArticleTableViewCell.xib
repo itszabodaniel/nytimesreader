@@ -81,6 +81,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bylineLabel" destination="Tpz-v7-SUh" id="ui4-L9-t3Z"/>
+                <outlet property="mediaImageView" destination="AmN-nX-hdH" id="A70-ft-RvS"/>
                 <outlet property="publishedLabel" destination="nMQ-Hp-zfK" id="zBG-KH-Jjt"/>
                 <outlet property="titleLabel" destination="RCa-cw-gUT" id="oIa-LN-Qlh"/>
             </connections>

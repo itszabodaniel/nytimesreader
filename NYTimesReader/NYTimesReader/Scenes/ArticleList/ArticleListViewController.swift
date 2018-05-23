@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ArticleListViewController: UITableViewController, ArticleListView {
 	var detailViewController: ArticleDetailViewController? = nil
 	var presenter: ArticleListPresenter!
+	var detailURL: URL?
+	var detailTitle: String?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,10 +34,9 @@ class ArticleListViewController: UITableViewController, ArticleListView {
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showDetail" {
-		    if let indexPath = tableView.indexPathForSelectedRow {
-		        let controller = (segue.destination as! UINavigationController).topViewController as! ArticleDetailViewController
-		        controller.navigationItem.leftItemsSupplementBackButton = true
-		    }
+			let controller = (segue.destination as! UINavigationController).topViewController as! ArticleDetailViewController
+			controller.url = detailURL
+			controller.title = detailTitle
 		}
 	}
 
@@ -53,20 +55,26 @@ class ArticleListViewController: UITableViewController, ArticleListView {
 		return cell!
 	}
 
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		presenter.didSelect(row: indexPath.row)
+	}
+	
 	func refreshArticlesList() {
 		self.tableView.reloadData()
 	}
 	
 	func showLoadingIndicator() {
-		
+		MBProgressHUD.showAdded(to: self.view, animated: false)
 	}
 	
 	func hideLoadingIndicator() {
-		
+		MBProgressHUD.hide(for: self.view, animated: false)
 	}
 	
-	func showDetailWithURL(url: URL) {
-		
+	func showDetailWithURL(url: URL, title: String) {
+		detailURL = url
+		detailTitle = title
+		self.performSegue(withIdentifier: "showDetail", sender: self)
 	}
 }
 

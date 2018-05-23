@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleTableViewCell: UITableViewCell, ArticleCellView {
 
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var bylineLabel: UILabel!
 	@IBOutlet weak var publishedLabel: UILabel!
+	@IBOutlet weak var mediaImageView: UIImageView!
 	
 	func display(title: String) {
 		titleLabel.text = title
@@ -24,5 +26,9 @@ class ArticleTableViewCell: UITableViewCell, ArticleCellView {
 	
 	func display(publishDateString: String) {
 		publishedLabel.text = publishDateString
+	}
+	
+	func display(imageURL: URL) {
+		mediaImageView.sd_setImage(with: imageURL, completed: nil)
 	}
 }
